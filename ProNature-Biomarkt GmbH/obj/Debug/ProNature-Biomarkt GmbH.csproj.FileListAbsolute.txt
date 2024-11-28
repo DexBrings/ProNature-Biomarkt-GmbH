@@ -1,0 +1,12 @@
+C:\Users\Admin\source\repos\ProNature-Biomarkt GmbH\ProNature-Biomarkt GmbH\bin\Debug\ProNature-Biomarkt GmbH.exe.config
+C:\Users\Admin\source\repos\ProNature-Biomarkt GmbH\ProNature-Biomarkt GmbH\bin\Debug\ProNature-Biomarkt GmbH.exe
+C:\Users\Admin\source\repos\ProNature-Biomarkt GmbH\ProNature-Biomarkt GmbH\bin\Debug\ProNature-Biomarkt GmbH.pdb
+C:\Users\Admin\source\repos\ProNature-Biomarkt GmbH\ProNature-Biomarkt GmbH\obj\Debug\ProNature-Biomarkt GmbH.csproj.AssemblyReference.cache
+C:\Users\Admin\source\repos\ProNature-Biomarkt GmbH\ProNature-Biomarkt GmbH\obj\Debug\ProNature_Biomarkt_GmbH.Properties.Resources.resources
+C:\Users\Admin\source\repos\ProNature-Biomarkt GmbH\ProNature-Biomarkt GmbH\obj\Debug\ProNature-Biomarkt GmbH.csproj.GenerateResource.cache
+C:\Users\Admin\source\repos\ProNature-Biomarkt GmbH\ProNature-Biomarkt GmbH\obj\Debug\ProNature-Biomarkt GmbH.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\ProNature-Biomarkt GmbH\ProNature-Biomarkt GmbH\obj\Debug\ProNature-Biomarkt GmbH.exe
+C:\Users\Admin\source\repos\ProNature-Biomarkt GmbH\ProNature-Biomarkt GmbH\obj\Debug\ProNature-Biomarkt GmbH.pdb
+C:\Users\Admin\source\repos\ProNature-Biomarkt GmbH\ProNature-Biomarkt GmbH\obj\Debug\ProNature_Biomarkt_GmbH.LoadingScreen.resources
+C:\Users\Admin\source\repos\ProNature-Biomarkt GmbH\ProNature-Biomarkt GmbH\obj\Debug\ProNature_Biomarkt_GmbH.MainMenuScreen.resources
+C:\Users\Admin\source\repos\ProNature-Biomarkt GmbH\ProNature-Biomarkt GmbH\obj\Debug\ProNature_Biomarkt_GmbH.ProductsScreen.resources
