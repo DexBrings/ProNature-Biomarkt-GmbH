@@ -56,7 +56,13 @@ namespace ProNature_Biomarkt_GmbH
             string productName = textBoxName.Text;
             string productBrand = textBoxBrand.Text;
             string productCategorie = comboBoxCategorie.Text;
-            float productPrice = float.Parse(textBoxPrice.Text);
+            string productPrice = textBoxPrice.Text;
+
+            databaseConnection.Open();
+            string query = string.Format("insert into Products values('{0}','{1}','{2}','{3}')", productName, productBrand, productCategorie, productPrice);
+            SqlCommand sqlCommand = new SqlCommand(query, databaseConnection);
+            sqlCommand.ExecuteNonQuery();
+            databaseConnection.Close();
 
             ClearAllFields();
 
