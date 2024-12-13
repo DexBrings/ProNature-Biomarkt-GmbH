@@ -36,7 +36,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.textBoxPrice = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.comboBoxCategorie = new System.Windows.Forms.ComboBox();
+            this.comboBoxCategory = new System.Windows.Forms.ComboBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
@@ -123,22 +123,22 @@
             this.label4.TabIndex = 6;
             this.label4.Text = "Preis";
             // 
-            // comboBoxCategorie
+            // comboBoxCategory
             // 
-            this.comboBoxCategorie.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.comboBoxCategorie.ForeColor = System.Drawing.Color.White;
-            this.comboBoxCategorie.FormattingEnabled = true;
-            this.comboBoxCategorie.Items.AddRange(new object[] {
+            this.comboBoxCategory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.comboBoxCategory.ForeColor = System.Drawing.Color.White;
+            this.comboBoxCategory.FormattingEnabled = true;
+            this.comboBoxCategory.Items.AddRange(new object[] {
             "Obst",
             "Gemüse",
             "Fleisch",
             "Fisch",
             "Drogerie",
             "Getränke"});
-            this.comboBoxCategorie.Location = new System.Drawing.Point(79, 57);
-            this.comboBoxCategorie.Name = "comboBoxCategorie";
-            this.comboBoxCategorie.Size = new System.Drawing.Size(153, 21);
-            this.comboBoxCategorie.TabIndex = 8;
+            this.comboBoxCategory.Location = new System.Drawing.Point(79, 57);
+            this.comboBoxCategory.Name = "comboBoxCategory";
+            this.comboBoxCategory.Size = new System.Drawing.Size(153, 21);
+            this.comboBoxCategory.TabIndex = 8;
             // 
             // btnSave
             // 
@@ -225,7 +225,7 @@
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.comboBoxCategorie);
+            this.Controls.Add(this.comboBoxCategory);
             this.Controls.Add(this.textBoxPrice);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -253,7 +253,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBoxPrice;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBoxCategorie;
+        private System.Windows.Forms.ComboBox comboBoxCategory;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnClear;

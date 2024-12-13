@@ -46,7 +46,7 @@ namespace ProNature_Biomarkt_GmbH
         {
             if (textBoxName.Text == "" 
                 || textBoxBrand.Text == ""
-                || comboBoxCategorie.Text == ""
+                || comboBoxCategory.Text == ""
                 || textBoxPrice.Text == "")
             {
                   MessageBox.Show("Bitte fülle alle Felder aus!");
@@ -56,10 +56,10 @@ namespace ProNature_Biomarkt_GmbH
 
             string productName = textBoxName.Text;
             string productBrand = textBoxBrand.Text;
-            string productCategorie = comboBoxCategorie.Text;
+            string productCategory = comboBoxCategory.Text;
             string productPrice = textBoxPrice.Text;
 
-            string query = string.Format("insert into Products values('{0}','{1}','{2}','{3}')", productName, productBrand, productCategorie, productPrice);
+            string query = string.Format("insert into Products values('{0}','{1}','{2}','{3}')", productName, productBrand, productCategory, productPrice);
             ExecuteQuery(query);
 
             ClearAllFields();
@@ -69,6 +69,21 @@ namespace ProNature_Biomarkt_GmbH
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
+            if (lastSelectedProductKey == 0)
+            {
+                MessageBox.Show("Bitte wähle zuerst ein Produkt aus.");
+                return;
+            }
+
+            string productName = textBoxName.Text;
+            string productBrand = textBoxBrand.Text;
+            string productCategory = comboBoxCategory.Text;
+            string productPrice = textBoxPrice.Text;
+
+            string query = string.Format("update Products set Name='{0}', Brand='{1}', Category='{2}', Price='{3}' where Id={4}"
+                , productName, productBrand, productCategory, productPrice, lastSelectedProductKey);         
+            ExecuteQuery(query);
+
             ClearAllFields();
 
             ShowProducts();
@@ -99,15 +114,15 @@ namespace ProNature_Biomarkt_GmbH
             textBoxName.Text = "";
             textBoxBrand.Text = "";
             textBoxPrice.Text = "";
-            comboBoxCategorie.Text = "";
-            comboBoxCategorie.SelectedItem = null;
+            comboBoxCategory.Text = "";
+            comboBoxCategory.SelectedItem = null;
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             textBoxName.Text = dataGridView1.SelectedRows[0].Cells[1].Value.ToString();
             textBoxBrand.Text = dataGridView1.SelectedRows[0].Cells[2].Value.ToString();
-            comboBoxCategorie.Text = dataGridView1.SelectedRows[0].Cells[3].Value.ToString();
+            comboBoxCategory.Text = dataGridView1.SelectedRows[0].Cells[3].Value.ToString();
             textBoxPrice.Text = dataGridView1.SelectedRows[0].Cells[4].Value.ToString();
 
             lastSelectedProductKey = (int)dataGridView1.SelectedRows[0].Cells[0].Value;
