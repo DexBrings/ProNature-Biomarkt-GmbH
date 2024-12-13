@@ -15,6 +15,7 @@ namespace ProNature_Biomarkt_GmbH
     public partial class ProductsScreen : Form
     {
         private SqlConnection databaseConnection = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename=C:\Users\Admin\Documents\Pro-Natura Biomarkt GmbH.mdf;Integrated Security = True; Connect Timeout = 30");
+        private int lastSelectedProductKey;
 
         public ProductsScreen()
         {
@@ -58,11 +59,8 @@ namespace ProNature_Biomarkt_GmbH
             string productCategorie = comboBoxCategorie.Text;
             string productPrice = textBoxPrice.Text;
 
-            databaseConnection.Open();
             string query = string.Format("insert into Products values('{0}','{1}','{2}','{3}')", productName, productBrand, productCategorie, productPrice);
-            SqlCommand sqlCommand = new SqlCommand(query, databaseConnection);
-            sqlCommand.ExecuteNonQuery();
-            databaseConnection.Close();
+            ExecuteQuery(query);
 
             ClearAllFields();
 
@@ -83,6 +81,16 @@ namespace ProNature_Biomarkt_GmbH
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            if(lastSelectedProductKey == 0)
+            {
+                MessageBox.Show("Bitte wähle zuerst ein Produkt aus.");
+                return;
+            }
+            string query = string.Format("delete from Products where Id ={0};", lastSelectedProductKey);
+            ExecuteQuery(query);
+
+            ClearAllFields();
+
             ShowProducts();
         }
 
@@ -94,6 +102,27 @@ namespace ProNature_Biomarkt_GmbH
             comboBoxCategorie.Text = "";
             comboBoxCategorie.SelectedItem = null;
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            textBoxName.Text = dataGridView1.SelectedRows[0].Cells[1].Value.ToString();
+            textBoxBrand.Text = dataGridView1.SelectedRows[0].Cells[2].Value.ToString();
+            comboBoxCategorie.Text = dataGridView1.SelectedRows[0].Cells[3].Value.ToString();
+            textBoxPrice.Text = dataGridView1.SelectedRows[0].Cells[4].Value.ToString();
+
+            lastSelectedProductKey = (int)dataGridView1.SelectedRows[0].Cells[0].Value;
+        }
+
+        private void ExecuteQuery(string query)
+        {
+            databaseConnection.Open();
+            SqlCommand sqlCommand = new SqlCommand(query, databaseConnection);
+            sqlCommand.ExecuteNonQuery();
+            databaseConnection.Close();
+        }
+
+
+
 
 
     }
